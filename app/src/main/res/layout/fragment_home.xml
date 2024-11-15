@@ -3,36 +3,84 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp">
+    android:clipToPadding="false"
+    android:paddingTop="12dp"
+    android:paddingBottom="15dp">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="67dp"
+            android:gravity="start"
             android:orientation="horizontal"
-            android:gravity="start">
+            android:paddingStart="15dp"
+            android:paddingEnd="15dp">
 
-            <ImageView
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_marginStart="8dp"
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/iv_profile_picture"
+                android:layout_width="55dp"
+                android:layout_height="match_parent"
                 android:background="?android:attr/selectableItemBackground"
                 android:contentDescription="@string/profile_picture"
                 android:scaleType="centerCrop"
                 android:src="@drawable/ic_profile" />
+
+            <TextView
+                android:id="@+id/tv_user_name"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginStart="8dp"
+                android:text="Guest"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:gravity="center_vertical" /> <!-- Default text "Guest" kalau belum login -->
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Dark mode"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/themeSwitch"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:textSize="15sp"/>
+
+                <Switch
+                    android:id="@+id/themeSwitch"
+                    android:layout_width="50dp"
+                    android:layout_height="48dp"
+                    android:layout_gravity="center_vertical"
+                    android:paddingStart="208dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
         </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/darker_gray"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:text="@string/recommended_for_you"
-            android:textColor="#000"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginStart="15dp"/>
 
         <TextView
             android:layout_width="295dp"
@@ -40,158 +88,120 @@
             android:layout_marginBottom="16dp"
             android:text="@string/start_your_day_with_some_motivation"
             android:textColor="#757575"
-            android:textSize="16sp" />
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center_vertical">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Juni"
-                android:textSize="18sp"
-                android:textColor="#000"
-                android:padding="8dp"
-                android:background="@drawable/rounded"
-                android:layout_marginEnd="8dp" />
-
-            <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:src="@drawable/ic_calendar"
-                android:contentDescription="@string/calendar" />
-        </LinearLayout>
+            android:textSize="16sp"
+            android:layout_marginStart="15dp"/>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:layout_marginTop="16dp"
-            android:gravity="center">
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@drawable/rounded"
-                android:gravity="center"
-                android:orientation="vertical"
-                android:padding="8dp"
-                android:layout_marginEnd="8dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Sun"
-                    android:textColor="#000" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="5"
-                    android:textColor="#000" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Vegetables"
-                    android:textColor="#757575"
-                    android:textSize="12sp" />
-            </LinearLayout>
-
-            <!-- Duplikat layout ini untuk hari selanjutnya -->
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@drawable/rounded"
-                android:gravity="center"
-                android:orientation="vertical"
-                android:padding="8dp"
-                android:layout_marginEnd="8dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Mon"
-                    android:textColor="#000" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="6"
-                    android:textColor="#000" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Banana"
-                    android:textColor="#757575"
-                    android:textSize="12sp" />
-            </LinearLayout>
-
-            <!-- Ulangi dengan sama untuk 1 minggu -->
-
-        </LinearLayout>
+            android:gravity="center"/>
 
         <!-- Daily Vitamins dan Daily Nutrition -->
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:layout_marginTop="16dp">
 
             <LinearLayout
+                android:id="@+id/calculate_nutrient"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="230dp"
                 android:layout_weight="1"
-                android:background="@drawable/fragmenthome1"
+                android:background="@drawable/rounded_square_green"
                 android:orientation="vertical"
                 android:padding="16dp"
-                android:layout_marginEnd="8dp">
+                android:layout_marginEnd="12dp"
+                android:layout_marginStart="15dp">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="3dp"
                     android:text="@string/daily_vitamins"
-                    android:textColor="#FFFFFF"
-                    android:textSize="20sp" />
+                    android:textColor="#009688"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/daily_vitamins_message"
-                    android:textColor="#FFFFFF"
+                    android:textColor="#4CAF50"
                     android:textSize="16sp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/pil" />
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/ask_dr_bot"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="230dp"
                 android:layout_weight="1"
-                android:background="@drawable/fragmenthome2"
+                android:background="@drawable/rounded_square_red"
                 android:orientation="vertical"
                 android:padding="16dp"
-                android:layout_marginStart="8dp">
+                android:layout_marginStart="12dp"
+                android:layout_marginEnd="15dp">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/daily_nutrition"
-                    android:textColor="#FFFFFF"
-                    android:textSize="20sp" />
+                    android:textColor="#DC143C"
+                    android:textSize="20sp"
+                    android:layout_marginBottom="3dp"
+                    android:textStyle="bold"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/daily_nutrition_message"
-                    android:textColor="#FFFFFF"
+                    android:textColor="#DC143C"
                     android:textSize="16sp" />
-            </LinearLayout>
 
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/drbot" />
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/remind_me"
+            android:layout_width="match_parent"
+            android:layout_height="230dp"
+            android:layout_weight="1"
+            android:background="@drawable/rounded_square_blue"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Remind Me!"
+                android:textColor="#4682B4"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="3dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Atur alarm untuk mengingatkan saya mengonsumsi makanan sehat"
+                android:textColor="#4682B4"
+                android:textSize="16sp" />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/clock" />
         </LinearLayout>
     </LinearLayout>
 </ScrollView>

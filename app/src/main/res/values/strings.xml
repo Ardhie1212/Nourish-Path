@@ -6,17 +6,22 @@
     <string name="kirim">Kirim</string>
     <string name="ketik_disini">Ketik disini</string>
 
-    <string name="guides">Guides</string>
-    <string name="edit_profile">Edit Profile</string>
-    <string name="full_name">Full name</string>
-    <string name="email">Email</string>
-
     <string name="profile_picture">Profile Picture</string>
     <string name="calendar">Calendar</string>
     <string name="recommended_for_you">Recommended for you</string>
     <string name="start_your_day_with_some_motivation">Start your day with some motivation.</string>
-    <string name="daily_vitamins">Daily Vitamins</string>
-    <string name="daily_vitamins_message">Anda mencapai target vitamin harian!</string>
-    <string name="daily_nutrition">Daily Nutrition</string>
-    <string name="daily_nutrition_message">Tetap konsumsi makanan sehat dan bergizi ya!</string>
+    <string name="daily_vitamins">Prevent Stunting Early!</string>
+    <string name="daily_vitamins_message">Hitung asupan nutrisi dari makanan yang dimakan!</string>
+    <string name="daily_nutrition">Tanya Dr. Bot!</string>
+    <string name="daily_nutrition_message">Ingin bertanya seputar kesehatan? Tanya Dr. Bot!</string>
+
+    <string name="guides">Guides</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="full_name">Full name</string>
+    <string name="email">Email</string>
+    <string name="account">Account</string>
+
+    <string name="dark_mode">Dark Mode</string>
+
+
 </resources>
